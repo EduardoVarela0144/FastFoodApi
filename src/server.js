@@ -3,6 +3,8 @@ var express = require("express");
 var cors = require("cors");
 const routesConfig = require("../src/routes");
 var path = require("path");
+var logger = require("morgan");
+
 
 var app = express();
 app.use(cors());
@@ -16,6 +18,8 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "uploads")));
 
 app.use(express.static(path.join(__dirname, "public")));
+
+app.use(logger("dev"));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
