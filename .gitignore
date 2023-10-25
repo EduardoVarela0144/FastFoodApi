@@ -12,7 +12,5 @@ node_modules
 npm-debug.log
 .DS_Store
 .env
-src/database/database.js
-src/app.js
 .env.example
 
